@@ -1,15 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "24.0.0 rc2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.kim.ladmusician.venus"
-        minSdkVersion 18
-        targetSdkVersion 18
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.productArchivesBaseName
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
     }
     buildTypes {
         debug {
@@ -41,6 +42,7 @@ android {
             'META-INF/ASL2.0'
     ]
 }
+
 repositories {
     maven { url rootProject.ext.mavenUrl }
 }
@@ -51,6 +53,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:${supportLibVersion}"
     compile "com.android.support:support-v4:${supportLibVersion}"
     compile "com.android.support:design:${supportLibVersion}"
+
     // DI
     compile "com.jakewharton:butterknife:${butterKnifeVersion}"
 

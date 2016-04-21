@@ -26,6 +26,12 @@ ext{
     versionCode = 1
     versionName = "1.0"
 
+    compileSdkVersion = 23
+    buildToolsVersion = '24.0.0 rc2'
+    minSdkVersion = 20
+    targetSdkVersion = 22
+    productArchivesBaseName = 'com.kim.ladmusician.venus'
+
     /** mqtt **/
     serviceArchivesBaseName = 'org.eclipse.paho.android.service'
     serviceVersion = '1.0.3-SNAPSHOT'
