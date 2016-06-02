@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VENUS</string>
+
+    <string name="MAIN_TITLE">웹프로그래밍</string>
 </resources>

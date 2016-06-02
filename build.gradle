@@ -21,3 +21,26 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    versionCode = 1
+    versionName = "1.0"
+
+    compileSdkVersion = 23
+    buildToolsVersion = '24.0.0 rc2'
+    minSdkVersion = 20
+    targetSdkVersion = 22
+    productArchivesBaseName = 'com.kim.ladmusician.venus'
+
+    /** mqtt **/
+    serviceArchivesBaseName = 'org.eclipse.paho.android.service'
+    serviceVersion = '1.0.3-SNAPSHOT'
+    clientVersion = '1.0.3-SNAPSHOT'
+    mavenUrl = "https://repo.eclipse.org/content/repositories/paho-snapshots/"
+
+    /** dependencies **/
+    supportLibVersion = '23.3.0'
+
+    /** di **/
+    butterKnifeVersion = '7.0.1'
+}

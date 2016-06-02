@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/VENUS.iml" filepath="$PROJECT_DIR$/VENUS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.eclipse.paho.android.service/org.eclipse.paho.android.service.iml" filepath="$PROJECT_DIR$/org.eclipse.paho.android.service/org.eclipse.paho.android.service.iml" />
     </modules>
   </component>
 </project>

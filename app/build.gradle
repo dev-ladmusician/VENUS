@@ -1,15 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "24.0.0 rc2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.kim.ladmusician.venus"
-        minSdkVersion 18
-        targetSdkVersion 18
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.productArchivesBaseName
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
     }
     buildTypes {
         debug {
@@ -21,10 +22,41 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions.excludes = [
+            'META-INF/DEPENDENCIES',
+            'META-INF/LICENSE',
+            'META-INF/LICENSE.txt',
+            'META-INF/ECLIPSE_.SF',
+            'META-INF/ECLIPSE_.RSA',
+            'LICENSE.txt',
+            'LICENSE',
+            'META-INF/LICENSE',
+            'META-INF/LICENSE.txt',
+            'META-INF/license.txt',
+            'META-INF/NOTICE',
+            'NOTICE',
+            'asm-license.txt',
+            'META-INF/NOTICE.txt',
+            'META-INF/notice.txt',
+            'META-INF/ASL2.0'
+    ]
+}
+
+repositories {
+    maven { url rootProject.ext.mavenUrl }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:support-v4:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+
+    // DI
+    compile "com.jakewharton:butterknife:${butterKnifeVersion}"
+
+    compile "org.eclipse.paho:org.eclipse.paho.client.mqttv3:${clientVersion}"
+    compile "org.eclipse.paho:org.eclipse.paho.android.service:${serviceVersion}"
 }
