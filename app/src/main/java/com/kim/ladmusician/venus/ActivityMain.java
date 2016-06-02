@@ -90,6 +90,9 @@ public class ActivityMain extends AppCompatActivity {
         if (mRecognizer != null) mRecognizer.destroy();
     }
 
+    /**
+     * START GOOGLE VOICE RECOGNITION
+     */
     void runMic() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
@@ -146,6 +149,9 @@ public class ActivityMain extends AppCompatActivity {
         return MqttConfiguration.getInstance(getApplicationContext());
     }
 
+    /**
+     * CALLBACK GOOGLE VOICE RECOGNITION
+     */
     private RecognitionListener listener = new RecognitionListener() {
         @Override
         public void onRmsChanged(float rmsdB) {
